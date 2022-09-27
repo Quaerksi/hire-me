@@ -11,7 +11,7 @@ let allTriangles = [ 'triangle1', 'triangle2', 'triangle3', 'triangle4', 'triang
     'triangle8', 'triangle9', 'triangle10', 'triangle11', 'triangle12', 'triangle13', 'triangle14', 'triangle15', 'triangle16', 'triangle17', 'triangle18']
 
 allTriangles.forEach(element =>{
-        console.log('Hello')
+        // console.log('Hello')
     window[element] = document.createElement('div')
     window[element].classList.add('triangle-basics')
     window[element].classList.add(element)  

@@ -11,19 +11,19 @@ body{
     --color-3: orange;
     --color-4: yellow;
     --color-5: greenyellow;
-    --color-6: green;
+    --color-6: seagreen;
     --color-7: darkgreen;
     --color-8: darkblue;
     --color-9: blue;
     --color-10: aqua;
-    --color-11: lightgreen;
-    --color-12: lightblue;
-    --color-13: lightgray;
-    --color-14: orangered;
-    --color-15: orange;
+    --color-11: lightskyblue;
+    --color-12: lightseagreen;
+    --color-13: mediumseagreen;
+    --color-14: lightgreen;
+    --color-15: greenyellow;
     --color-16: yellow;
-    --color-17: greenyellow;
-    --color-18: green;
+    --color-17: orange;
+    --color-18: orangered;
 }
 
 .center{
@@ -34,6 +34,22 @@ body{
     height: 2rem;
     /* border-radius: 50%;
     background-color: var(--color-font); */
+}
+
+.carousel{
+    width: 100vw;
+    height: 100vh;
+
+    animation: rotating 5s linear infinite;
+}
+
+@keyframes rotating{
+    0%{
+        transform: rotate(0dceg)
+    }
+    100%{
+        transform: rotate(320deg)
+    }
 }
 
 .triangle-basics{
