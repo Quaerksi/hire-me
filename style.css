@@ -1,0 +1,143 @@
+body{
+    background-color: black;
+    color: aquamarine;
+    overflow: hidden;
+}
+
+:root {
+    --color-font: aquamarine;
+    --color-1: red;
+    --color-2: orangered;
+    --color-3: orange;
+    --color-4: yellow;
+    --color-5: greenyellow;
+    --color-6: green;
+    --color-7: darkgreen;
+    --color-8: darkblue;
+    --color-9: blue;
+    --color-10: aqua;
+    --color-11: lightgreen;
+    --color-12: lightblue;
+    --color-13: lightgray;
+    --color-14: orangered;
+    --color-15: orange;
+    --color-16: yellow;
+    --color-17: greenyellow;
+    --color-18: green;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    /* border-radius: 50%;
+    background-color: var(--color-font); */
+}
+
+.triangle-basics{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+
+    border-top: 0vh solid transparent; /* skyblue */
+    border-right: 0 solid transparent; /* limegreen;  */
+    border-bottom: 200vh solid transparent; /* orange; */
+
+    left: 50vw;
+    top: -150vh;
+
+    transform-origin: left bottom;
+    /* transform: translate3d(50vw,-50vh,0); */
+}
+
+.triangle1{
+    /* border-left: 80vh solid var(--color-1);  */
+    border-left: 80vh solid var(--color-1);
+}
+
+.triangle2{
+    border-left: 80vh solid var(--color-2);
+    transform: rotate(20deg)
+}
+
+.triangle3{
+    border-left: 80vh solid var(--color-3);
+    transform: rotate(40deg)
+}
+
+.triangle4{
+    border-left: 80vh solid var(--color-4);
+    transform: rotate(60deg)
+}
+
+.triangle5{
+    border-left: 80vh solid var(--color-5); 
+    transform: rotate(80deg)
+}
+
+.triangle6{
+    border-left: 80vh solid var(--color-6);
+    transform: rotate(100deg)
+}
+
+.triangle7{
+    border-left: 80vh solid var(--color-7);
+    transform: rotate(120deg)
+}
+
+.triangle8{
+    border-left: 80vh solid var(--color-8);
+    transform: rotate(140deg)
+}
+
+.triangle9{
+    border-left: 80vh solid var(--color-9); 
+    transform: rotate(160deg)
+}
+
+.triangle10{
+    border-left: 80vh solid var(--color-10);
+    transform: rotate(180deg)
+}
+
+.triangle11{
+    border-left: 80vh solid var(--color-11);
+    transform: rotate(200deg)
+}
+
+.triangle12{
+    border-left: 80vh solid var(--color-12);
+    transform: rotate(220deg)
+}
+
+.triangle13{
+    border-left: 80vh solid var(--color-13); 
+    transform: rotate(240deg)
+}
+
+.triangle14{
+    border-left: 80vh solid var(--color-14);
+    transform: rotate(260deg)
+}
+
+.triangle15{
+    border-left: 80vh solid var(--color-15);
+    transform: rotate(280deg)
+}
+
+.triangle16{
+    border-left: 80vh solid var(--color-16);
+    transform: rotate(300deg)
+}
+
+.triangle17{
+    border-left: 80vh solid var(--color-17);
+    transform: rotate(320deg)
+}
+
+.triangle18{
+    border-left: 80vh solid var(--color-18);
+    transform: rotate(340deg)
+}

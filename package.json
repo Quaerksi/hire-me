@@ -1,0 +1,28 @@
+{
+  "name": "hire-me",
+  "version": "1.0.0",
+  "description": "Tired of hiring processes, I program it",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quaerksi/hire-me.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "CSS",
+    "HTML",
+    "Animation"
+  ],
+  "author": "Juliette",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Quaerksi/hire-me/issues"
+  },
+  "homepage": "https://github.com/Quaerksi/hire-me#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
