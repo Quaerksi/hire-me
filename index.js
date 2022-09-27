@@ -6,6 +6,19 @@ const carousel = document.getElementById('carousel')
 // carousel.appendChild(center)
 
 // create triangles
+
+let allTriangles = [ 'triangle1', 'triangle2', 'triangle3', 'triangle4', 'triangle5', 'triangle6', 'triangle7', 
+    'triangle8', 'triangle9', 'triangle10', 'triangle11', 'triangle12', 'triangle13', 'triangle14', 'triangle15', 'triangle16', 'triangle17', 'triangle18']
+
+allTriangles.forEach(element =>{
+        console.log('Hello')
+    window[element] = document.createElement('div')
+    window[element].classList.add('triangle-basics')
+    window[element].classList.add(element)  
+    carousel.appendChild(window[element])  
+})
+
+/*
 const triangle1 = document.createElement('div')
 const triangle2 = document.createElement('div')
 const triangle3 = document.createElement('div')
@@ -99,3 +112,5 @@ carousel.appendChild(triangle15)
 carousel.appendChild(triangle16)
 carousel.appendChild(triangle17)
 carousel.appendChild(triangle18)
+
+*/
