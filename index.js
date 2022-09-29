@@ -6,6 +6,7 @@ const carousel = document.getElementById('carousel')
 // carousel.appendChild(center)
 
 // create triangles
+const NUMBER_OF_TRIANGLES = 18;
 
 let allTriangles = [ 'triangle1', 'triangle2', 'triangle3', 'triangle4', 'triangle5', 'triangle6', 'triangle7', 
     'triangle8', 'triangle9', 'triangle10', 'triangle11', 'triangle12', 'triangle13', 'triangle14', 'triangle15', 'triangle16', 'triangle17', 'triangle18']
@@ -18,99 +19,50 @@ allTriangles.forEach(element =>{
     carousel.appendChild(window[element])  
 })
 
-/*
-const triangle1 = document.createElement('div')
-const triangle2 = document.createElement('div')
-const triangle3 = document.createElement('div')
-const triangle4 = document.createElement('div')
-const triangle5 = document.createElement('div')
-const triangle6 = document.createElement('div')
-const triangle7 = document.createElement('div')
-const triangle8 = document.createElement('div')
-const triangle9 = document.createElement('div')
-const triangle10 = document.createElement('div')
-const triangle11 = document.createElement('div')
-const triangle12 = document.createElement('div')
-const triangle13 = document.createElement('div')
-const triangle14 = document.createElement('div')
-const triangle15 = document.createElement('div')
-const triangle16 = document.createElement('div')
-const triangle17 = document.createElement('div')
-const triangle18 = document.createElement('div')
+setTimeout(getOut, 500)
 
-//add classes to triangle
-triangle1.classList.add('triangle-basics')
-triangle1.classList.add('triangle1')
+const sleep = ms => {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
 
-triangle2.classList.add('triangle-basics')
-triangle2.classList.add('triangle2')
+async function getOut() {
 
-triangle3.classList.add('triangle-basics')
-triangle3.classList.add('triangle3')
+    for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
 
-triangle4.classList.add('triangle-basics')
-triangle4.classList.add('triangle4')
+                /******* for production *******/
+                // await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out`))
 
-triangle5.classList.add('triangle-basics')
-triangle5.classList.add('triangle5')
+                /******* for developement *******/
+                window[`triangle${i}`].classList.add(`triangle${i}-out`)
+    }
+}
 
-triangle6.classList.add('triangle-basics')
-triangle6.classList.add('triangle6')
+setTimeout(getIn, 500)
+// setTimeout(getIn, 4000)
 
-triangle7.classList.add('triangle-basics')
-triangle7.classList.add('triangle7')
+async function getIn() {
 
-triangle8.classList.add('triangle-basics')
-triangle8.classList.add('triangle8')
+    for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
 
-triangle9.classList.add('triangle-basics')
-triangle9.classList.add('triangle9')
+        // get computed style
+        window[`triangle${i}`].style.top = getComputedStyle(window[`triangle${i}`]).top;
+        window[`triangle${i}`].style.left = getComputedStyle(window[`triangle${i}`]).left
 
-triangle10.classList.add('triangle-basics')
-triangle10.classList.add('triangle10')
+        /******* for production *******/
+        await new Promise(resolve => setTimeout(resolve, 500)).then(v => {
 
-triangle11.classList.add('triangle-basics')
-triangle11.classList.add('triangle11')
+            // remove classes
+            window[`triangle${i}`].classList.remove(`triangle${i}-out`)
+            // add classes
+            window[`triangle${i}`].classList.add('triangle-in')
+        })
 
-triangle12.classList.add('triangle-basics')
-triangle12.classList.add('triangle12')
+        /******* for developement *******/
 
-triangle13.classList.add('triangle-basics')
-triangle13.classList.add('triangle13')
+        // remove classes
+        // window[`triangle${i}`].classList.remove(`triangle${i}-out`)
 
-triangle14.classList.add('triangle-basics')
-triangle14.classList.add('triangle14')
-
-triangle15.classList.add('triangle-basics')
-triangle15.classList.add('triangle15')
-
-triangle16.classList.add('triangle-basics')
-triangle16.classList.add('triangle16')
-
-triangle17.classList.add('triangle-basics')
-triangle17.classList.add('triangle17')
-
-triangle18.classList.add('triangle-basics')
-triangle18.classList.add('triangle18')
-
-//append triangles
-carousel.appendChild(triangle1)
-carousel.appendChild(triangle2)
-carousel.appendChild(triangle3)
-carousel.appendChild(triangle4)
-carousel.appendChild(triangle5)
-carousel.appendChild(triangle6)
-carousel.appendChild(triangle7)
-carousel.appendChild(triangle8)
-carousel.appendChild(triangle9)
-carousel.appendChild(triangle10)
-carousel.appendChild(triangle11)
-carousel.appendChild(triangle12)
-carousel.appendChild(triangle13)
-carousel.appendChild(triangle14)
-carousel.appendChild(triangle15)
-carousel.appendChild(triangle16)
-carousel.appendChild(triangle17)
-carousel.appendChild(triangle18)
-
-*/
+        // add classes
+        // window[`triangle${i}`].classList.add('triangle-in')
+    }
+}

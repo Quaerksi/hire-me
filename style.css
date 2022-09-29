@@ -1,10 +1,12 @@
 body{
+
     background-color: black;
     color: aquamarine;
     overflow: hidden;
 }
 
 :root {
+
     --color-font: aquamarine;
     --color-1: red;
     --color-2: orangered;
@@ -27,9 +29,11 @@ body{
 }
 
 .center{
+
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     width: 2rem;
     height: 2rem;
     /* border-radius: 50%;
@@ -37,15 +41,17 @@ body{
 }
 
 .carousel{
+
     width: 100vw;
     height: 100vh;
 
-    animation: rotating 5s linear infinite;
+    /* animation: rotating 5s linear infinite; */
 }
 
 @keyframes rotating{
+
     0%{
-        transform: rotate(0dceg)
+        transform: rotate(0deg)
     }
     100%{
         transform: rotate(320deg)
@@ -53,37 +59,40 @@ body{
 }
 
 .triangle-basics{
+
     position: absolute;
     width: 0px;
     height: 0px;
 
-    border-top: 0vh solid transparent; /* skyblue */
-    border-right: 0 solid transparent; /* limegreen;  */
-    border-bottom: 200vh solid transparent; /* orange; */
+    border-top: 0vh solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 200vh solid transparent;
 
     left: 50vw;
     top: -150vh;
 
     transform-origin: left bottom;
-    /* transform: translate3d(50vw,-50vh,0); */
 }
 
 .triangle1{
-    /* border-left: 80vh solid var(--color-1);  */
+
     border-left: 80vh solid var(--color-1);
 }
 
 .triangle2{
+
     border-left: 80vh solid var(--color-2);
     transform: rotate(20deg)
 }
 
 .triangle3{
+
     border-left: 80vh solid var(--color-3);
     transform: rotate(40deg)
 }
 
 .triangle4{
+
     border-left: 80vh solid var(--color-4);
     transform: rotate(60deg)
 }
@@ -94,66 +103,331 @@ body{
 }
 
 .triangle6{
+
     border-left: 80vh solid var(--color-6);
     transform: rotate(100deg)
 }
 
 .triangle7{
+
     border-left: 80vh solid var(--color-7);
     transform: rotate(120deg)
 }
 
 .triangle8{
+
     border-left: 80vh solid var(--color-8);
     transform: rotate(140deg)
 }
 
 .triangle9{
+
     border-left: 80vh solid var(--color-9); 
     transform: rotate(160deg)
 }
 
 .triangle10{
+
     border-left: 80vh solid var(--color-10);
     transform: rotate(180deg)
 }
 
 .triangle11{
+
     border-left: 80vh solid var(--color-11);
     transform: rotate(200deg)
 }
 
 .triangle12{
+
     border-left: 80vh solid var(--color-12);
     transform: rotate(220deg)
 }
 
 .triangle13{
+
     border-left: 80vh solid var(--color-13); 
     transform: rotate(240deg)
 }
 
 .triangle14{
+
     border-left: 80vh solid var(--color-14);
     transform: rotate(260deg)
 }
 
 .triangle15{
+
     border-left: 80vh solid var(--color-15);
     transform: rotate(280deg)
 }
 
 .triangle16{
+
     border-left: 80vh solid var(--color-16);
     transform: rotate(300deg)
 }
 
 .triangle17{
+
     border-left: 80vh solid var(--color-17);
     transform: rotate(320deg)
 }
 
 .triangle18{
+
     border-left: 80vh solid var(--color-18);
     transform: rotate(340deg)
+}
+
+/****** Triangle in ******/
+
+.triangle-in{
+
+    animation: in 2s linear forwards;
+}
+
+@keyframes in{
+
+    to{
+        top: -150vh;
+        left: 50vw;
+    }
+}
+
+/****** Triangle out ******/
+
+.triangle1-out{
+
+    animation: out1 2s linear forwards;
+}
+
+.triangle2-out{
+
+    animation: out2 2s linear forwards;
+}
+
+.triangle3-out{
+
+    animation: out3 2s linear forwards;
+}
+
+.triangle4-out{
+
+    animation: out4 2s linear forwards;
+}
+
+.triangle5-out{
+
+    animation: out5 2s linear forwards;
+}
+
+.triangle6-out{
+
+    animation: out6 2s linear forwards;
+}
+
+.triangle7-out{
+
+    animation: out7 2s linear forwards;
+}
+
+.triangle8-out{
+
+    animation: out8 2s linear forwards;
+}
+
+.triangle9-out{
+
+    animation: out9 2s linear forwards;
+}
+
+.triangle10-out{
+
+    animation: out10 2s linear forwards;
+}
+
+.triangle11-out{
+
+    animation: out11 2s linear forwards;
+}
+
+.triangle12-out{
+
+    animation: out12 2s linear forwards;
+}
+
+.triangle13-out{
+
+    animation: out13 2s linear forwards;
+}
+
+.triangle14-out{
+
+    animation: out14 2s linear forwards;
+}
+
+.triangle15-out{
+
+    animation: out15 2s linear forwards;
+}
+
+.triangle16-out{
+
+    animation: out16 2s linear forwards;
+}
+
+.triangle17-out{
+
+    animation: out17 2s linear forwards;
+}
+
+.triangle18-out{
+
+    animation: out18 2s linear forwards;
+}
+
+/****** keyframes out ******/
+
+@keyframes out1{
+
+    to{
+        top: -350vh;
+    }
+}
+
+@keyframes out2{
+
+    to{
+        top: -350vh;
+        left: 107vw;
+    }
+}
+
+@keyframes out3{
+
+    to{
+        top: -350vh;
+        left: 177vw;
+    }
+}
+
+@keyframes out4{
+
+    to{
+        top: -180vh;
+        left: 230vw;
+    }
+}
+
+@keyframes out5{
+
+    to{
+        top: 10vh;
+        left: 227vw;
+    }
+}
+
+@keyframes out6{
+
+    to{
+        top: 30vh;
+        left: 300vw;
+    }
+}
+
+@keyframes out7{
+
+    to{
+        top: 110vh;
+        left: 200vw;
+    }
+}
+
+@keyframes out8{
+
+    to{
+        top: 180vh;
+        left: 180vw;
+    }
+}
+
+@keyframes out9{
+
+    to{
+        top: 180vh;
+        left: 50vw;
+    }
+}
+
+@keyframes out10{
+
+    to{
+        top: 180vh;
+        left: 40vw;
+    }
+}
+
+@keyframes out11{
+
+    to{
+        top: 200vh;
+        left: -80vw;
+    }
+}
+
+@keyframes out12{
+
+    to{
+        top: 80vh;
+        left: -100vw;
+    }
+}
+
+@keyframes out13{
+
+    to{
+        top: 30vh;
+        left: -200vw;
+    }
+}
+
+@keyframes out14{
+
+    to{
+        top: -90vh;
+        left: -250vw;
+    }
+}
+
+@keyframes out15{
+
+    to{
+        top: -280vh;
+        left: -400vw;
+    }
+}
+
+@keyframes out16{
+
+    to{
+        top: -450vh;
+        left: -120vw;
+    }
+}
+
+@keyframes out17{
+
+    to{
+        top: -350vh;
+        left: 0vw;
+    }
+}
+
+@keyframes out18{
+
+    to{
+        top: -350vh;
+        left: 30vw;
+    }
 }
