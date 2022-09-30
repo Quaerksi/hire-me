@@ -1,11 +1,40 @@
 const carousel = document.getElementById('carousel')
+const request = document.getElementById('request')
+const requestChilds = request.children
+const spanQuantity = requestChilds.length
 
 // point in the middle
 // const center = document.createElement('div')
 // center.classList.add('center')
 // carousel.appendChild(center)
 
-// create triangles
+/****** animate request ******/
+
+request.classList.add('center')
+
+setTimeout(letLettersDance, 1000)
+
+async function letLettersDance () {
+
+    for(let i = 0; i < spanQuantity; i++){
+
+        await new Promise(resolve => setTimeout(resolve, 1000)).then(v => requestChilds[i].classList.add('start-animation-pop-up')) 
+
+        // set computed style
+        requestChilds[i].style.transform = `scale(1)`;
+    }
+    
+
+    for(let i = spanQuantity - 1; i >= 0; i--){
+        
+        await new Promise(resolve => setTimeout(resolve, 1000)).then(v => requestChilds[i].classList.add('start-animation-jump-and-spin')) 
+    }
+    
+}
+
+
+/****** create triangles ******/
+
 const NUMBER_OF_TRIANGLES = 18;
 
 let allTriangles = [ 'triangle1', 'triangle2', 'triangle3', 'triangle4', 'triangle5', 'triangle6', 'triangle7', 
@@ -19,7 +48,7 @@ allTriangles.forEach(element =>{
     carousel.appendChild(window[element])  
 })
 
-setTimeout(getOut, 500)
+setTimeout(getOut, 00)
 
 const sleep = ms => {
     return new Promise(resolve => setTimeout(resolve, ms))
@@ -37,7 +66,7 @@ async function getOut() {
     }
 }
 
-setTimeout(getIn, 500)
+// setTimeout(getIn, 500)
 // setTimeout(getIn, 4000)
 
 async function getIn() {

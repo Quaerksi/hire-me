@@ -1,5 +1,7 @@
 body{
 
+    margin: 0;
+    padding: 0;
     background-color: black;
     color: aquamarine;
     overflow: hidden;
@@ -28,17 +30,89 @@ body{
     --color-18: orangered;
 }
 
-.center{
+h1{
 
+    margin: 0;
+    padding: 0;
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 19rem;
     transform: translate(-50%, -50%);
-    width: 2rem;
-    height: 2rem;
-    /* border-radius: 50%;
-    background-color: var(--color-font); */
 }
+
+h1 span{
+
+    
+    display: inline-block;
+    font-size: 3.5rem;
+    transform: scale(0)
+}
+
+.request-dance{
+
+    /* animation: dance 5s ease-in-out; */
+}
+
+@keyframes dance {
+    0%{
+        transform: translate(-50%, -50%)
+    }
+    20%{
+        transform: translate(-50%, -200%)
+    } 
+    40%{
+        transform: translate(-50%, 100%)
+    } 
+    60%{
+        transform: translate(-50%, -200%)
+    } 
+    80%{
+        transform: translate(-50%, 100%)
+    }
+    100%{
+        transform: translate(-50%, -50%)
+    }
+}
+
+.start-animation-pop-up{
+    
+    animation: pop-up 1s forwards;
+}
+
+.start-animation-jump-and-spin{
+
+    animation: jump-and-spin 3s forwards;
+}
+
+@keyframes pop-up {
+
+    100%{
+        
+        transform: scale(1);
+    }
+}
+
+@keyframes jump-and-spin{
+
+    0%{
+        transform: translateY(-50%) rotate3d(0deg);
+    } 
+    50%{
+        transform: rotate3d(0,1,0,180deg) translateY(-200%);
+    } 
+    100%{
+        transform: rotate3d(0,1,0,360deg) translateY(0%);
+    }
+    /* 75%{
+        transform: rotate3d(0,1,0,540deg) translateY(-200%);
+    }
+    100%{
+        transform: translateY(0%) rotate3d(0,1,0,740deg);
+    }   */
+}
+
+/* ****** Carousel ***************************************************************************** */
 
 .carousel{
 
