@@ -30,208 +30,44 @@ var crowdCheer = new Audio('music/crowd-cheer.mp3')
 
 buttonAllowAudio.addEventListener('click', playAll)
 
+// font appears
 function playAll(){
+
+    function startLetetrsMoving(){
+
+        // font appears
+        lettersPopUp(1000)
+        // font jumps and rotate
+        lettersJumpAndSpin(7500)
+        // letters build tower
+        buildATower(15000)
+        // jumping and cheering word me
+        chumpingAndCheeringWordMe(26000) 
+        // move the word me to the right
+        jumpToRightWordMe(28500)
+        // circular around the tower
+        circularArroundTheTower(31500)
+        // move the word me to the left
+        jumpToLeftWordMe(36000)
+        // dismantle the tower
+        dismantleTheTower(37300)
+        // jumping and cheering all
+        jumpingAndCheeringAll(48000)
+    }
+    
+    // startLetetrsMoving()
+
     /****** animate request ******/
     request.classList.add('center')
 
-    setTimeout(letLettersDance, 1000)
-
-    async function letLettersDance () {
-
-        /******* for production *******/
-        // font appears
-        for(let i = 0; i < spanQuantity; i++){
-
-            await new Promise(resolve => setTimeout(resolve, 1500)).then(v => {
-                
-                i%2 === 0 ? setTimeout(() => {soundBloop.play()}, 1500) : setTimeout(() => {soundBloop2.play()}, 1500)
-                requestChilds[i].classList.add('start-animation-pop-up')
-            }) 
-
-            // set computed style
-            requestChilds[i].style.transform = `scale(1)`;
-        }
-        /******* for developement *******/
-        // for(let i = 0; i < spanQuantity; i++){
-
-        //     requestChilds[i].classList.add('start-animation-pop-up')
-
-        //     // set computed style
-        //     requestChilds[i].style.transform = `scale(1)`
-        // }
-
-        // for(let i = 0; i < spanQuantity; i++){
-
-        //     requestChilds[i].style = getComputedStyle(requestChilds[i])
-        // }
-
-        /******* for production *******/
-        // font jumps and rotate
-        // await new Promise(resolve => setTimeout(resolve, 2000))
-        // for(let i = spanQuantity - 1; i >= 0; i--){
-            
-        //     await new Promise(resolve => setTimeout(resolve, 1000)).then(v => {
-
-        //         soundWhoosh.play()
-        //         requestChilds[i].classList.add('start-animation-jump-and-spin')
-        //     }) 
-        // }
-
- 
-        /******* for production *******/
-        // build tower
-        await new Promise(resolve => setTimeout(resolve, 1500)).then(v => {
-            soundHep1.play()
-            setTimeout(() => {
-                requestChilds[2].innerHTML= ''
-                requestChilds[2].classList.add('tower-hire-r')
-            }, 100)
-            setTimeout(() => {soundHep3.play()}, 2700)
-            setTimeout(() => {
-                requestChilds[1].innerHTML= ''
-                requestChilds[1].classList.add('tower-hire-i')
-            }, 3000)
-            setTimeout(() => {soundHep2.play()}, 5800)
-            setTimeout(() => {soundHep2.play()}, 7700)
-            setTimeout(() => {soundHep2.play()}, 9500)
-            // setTimeout(() => {soundHep2.play()}, 10500)
-            setTimeout(() => {
-                requestChilds[0].innerHTML= ''
-                requestChilds[0].classList.add('tower-hire-h')}
-                , 6000)
-        })
-        /******* for developement *******/
-
-        // requestChilds[2].innerHTML= ''
-        // requestChilds[2].classList.add('tower-hire-r')
-        // requestChilds[1].innerHTML= ''
-        // requestChilds[1].classList.add('tower-hire-i')
-        // requestChilds[0].innerHTML= ''
-        // requestChilds[0].classList.add('tower-hire-h')
-
-        /******* for production *******/
-        // jumping and cheering word me
-        await new Promise(resolve => setTimeout(resolve, 7000))
-        await new Promise(resolve => setTimeout(resolve, 4000)).then(v =>  {
-            soundClapping.play()
-   
-            requestChilds[4].classList.add('request-dance')
-        
-            setTimeout(() => {requestChilds[5].classList.add('request-dance')}, 200)
-        })
-        
-        /******* for developement *******/
-        
-        // await new Promise(resolve => setTimeout(resolve, 3000))
-
-        // acrobatics.classList.add('request-dance')
-        // for(let i = 0; i < spanQuantity; i++){
-
-        //     requestChilds[i].style = getComputedStyle(requestChilds[i])
-        // }
-
-        /******* for production *******/
-        // move the word me to the right
-        await new Promise(resolve => setTimeout(resolve, 3000)).then(v => {
-
-            soundHep1.play()
-            soundHep4.play()
-            
-            requestChilds[4].innerHTML= '';
-            requestChilds[4].classList.add('m-from-the-word-me')
-            requestChilds[5].innerHTML= '';
-            requestChilds[5].classList.add('e-from-the-word-me')           
-        })
-        
-        // circle around the tower HIRE
-        await new Promise(resolve => setTimeout(resolve, 3000)).then(v => {
-
-            hulaHoop.play()
-
-            requestChilds[4].classList.add('swing-arround-m-to-the-left')
-            requestChilds[5].classList.add('swing-arround-e-to-the-left')
-            acrobatics.classList.add('swing-arround')
-        })
-        
-        /******* for production *******/
-        // move the word me to the left
-        await new Promise(resolve => setTimeout(resolve, 5000)).then(v => {
-
-            // requestChilds[4].style.left = '6.5rem'
-            // requestChilds[5].style.left = '6.5rem'  
-
-            soundHep1.play()
-            soundHep4.play()
-            
-            requestChilds[4].innerHTML= '';
-            requestChilds[4].classList.add('m-from-the-word-me-to-left')
-            requestChilds[5].innerHTML= '';
-            requestChilds[5].classList.add('e-from-the-word-me-to-left') 
-        })
-
-        /******* for production *******/
-        // dismantle the tower
-        // await new Promise(resolve => setTimeout(resolve, 1500)).then(v =>  soundHep1.play())
-        // setTimeout(() => {
-        //     requestChilds[2].innerHTML= ''
-        //     requestChilds[2].classList.add('tower-hire-r')
-        // }, 100)
-        // setTimeout(() => {soundHep3.play()}, 2500)
-        // setTimeout(() => {
-        //     requestChilds[1].innerHTML= ''
-        //     requestChilds[1].classList.add('tower-hire-i')
-        // }, 3000)
 
 
-        // letter H
-        setTimeout(() => {soundHep2.play()}, 1000)
-        setTimeout(() => {soundHep2.play()}, 2400)
-        setTimeout(() => {soundHep2.play()}, 4000)
-
-        setTimeout(() => {
-            // requestChilds[0].style.left = '10rem'
-            requestChilds[0].innerHTML= ''
-            requestChilds[0].classList.add('dismantle-tower-hire-h')
-        }, 1000)
-
-        // letter I
-        setTimeout(() => {soundHep3.play()}, 5100)
-        setTimeout(() => {
-            // requestChilds[1].style.left = '6.5rem'
-            requestChilds[1].innerHTML= ''
-            requestChilds[1].classList.add('dismantle-tower-hire-i')
-        }, 5500)
-
-        setTimeout(() => {soundHep1.play()}, 8000)
-        setTimeout(() => {
-            requestChilds[2].innerHTML= ''
-            requestChilds[2].classList.add('dismantle-tower-hire-r')
-        }, 8000)
 
 
-        /******* for production *******/
-        // jumping and cheering all
-        
-        await new Promise(resolve => setTimeout(resolve, 11000)).then(v =>  {
-            crowdCheer.play()
-   
-            requestChilds[2].classList.add('request-dance-all')
-            requestChilds[5].classList.add('request-dance-all')
-        
-            setTimeout(() => 
-                {
-                    requestChilds[0].classList.add('request-dance-all')
-                    requestChilds[4].classList.add('request-dance-all')
-                }, 200)
-            setTimeout(() => {
-                    requestChilds[1].classList.add('request-dance-all')
-                    requestChilds[3].classList.add('request-dance-all')
-                }, 300)
-        })
-        
 
-    }
 
+
+    
     // tower insg später, i früher
 
     /****** create triangles ******/
@@ -297,6 +133,166 @@ function playAll(){
         }
     }
 
+}
+
+async function lettersPopUp(time) {
+
+    for(let i = 0; i < spanQuantity; i++){
+
+        await new Promise(resolve => setTimeout(resolve, time)).then(v => {
+            
+            i%2 === 0 ? setTimeout(() => {soundBloop.play()}, 1500) : setTimeout(() => {soundBloop2.play()}, 1500)
+            requestChilds[i].classList.add('start-animation-pop-up')
+        }) 
+
+        // set computed style
+        requestChilds[i].style.transform = `scale(1)`;
+    }
+}
+
+// font jumps and rotate
+async function lettersJumpAndSpin(time) {
+    
+    await new Promise(resolve => setTimeout(resolve, time))
+    for(let i = spanQuantity - 1; i >= 0; i--){
+        
+        await new Promise(resolve => setTimeout(resolve, 1000)).then(v => {
+
+            soundWhoosh.play()
+            requestChilds[i].classList.add('start-animation-jump-and-spin')
+        }) 
+    }
+}
+
+// letters build tower
+async function buildATower(time) {
+
+    await new Promise(resolve => setTimeout(resolve, time)).then(v => {
+        soundHep1.play()
+        setTimeout(() => {
+            requestChilds[2].innerHTML= ''
+            requestChilds[2].classList.add('tower-hire-r')
+        }, 100)
+        setTimeout(() => {soundHep3.play()}, 2700)
+        setTimeout(() => {
+            requestChilds[1].innerHTML= ''
+            requestChilds[1].classList.add('tower-hire-i')
+        }, 3000)
+        setTimeout(() => {soundHep2.play()}, 5800)
+        setTimeout(() => {soundHep2.play()}, 7700)
+        setTimeout(() => {soundHep2.play()}, 9500)
+        setTimeout(() => {
+            requestChilds[0].innerHTML= ''
+            requestChilds[0].classList.add('tower-hire-h')}
+            , 6000)
+    })
+}
+
+// jumping and cheering word me
+async function chumpingAndCheeringWordMe(time) {
+   
+    await new Promise(resolve => setTimeout(resolve, time)).then(v =>  {
+        soundClapping.play()
+
+        requestChilds[4].classList.add('request-dance')
+    
+        setTimeout(() => {requestChilds[5].classList.add('request-dance')}, 200)
+    })
+}
+
+ // move the word me to the right
+ async function jumpToRightWordMe(time) {
+
+    await new Promise(resolve => setTimeout(resolve, time)).then(v => {
+
+        soundHep1.play()
+        soundHep4.play()
+        
+        requestChilds[4].innerHTML= '';
+        requestChilds[4].classList.add('m-from-the-word-me')
+        requestChilds[5].innerHTML= '';
+        requestChilds[5].classList.add('e-from-the-word-me')           
+    })
+}
+
+// circular around the tower
+async function circularArroundTheTower(time) {
+
+    await new Promise(resolve => setTimeout(resolve, time)).then(v => {
+
+        hulaHoop.play()
+
+        requestChilds[4].classList.add('swing-arround-m-to-the-left')
+        requestChilds[5].classList.add('swing-arround-e-to-the-left')
+        acrobatics.classList.add('swing-arround')
+    })
+}
+
+// move the word me to the left
+async function jumpToLeftWordMe(time){
+
+    await new Promise(resolve => setTimeout(resolve, time)).then(v => { 
+
+        soundHep1.play()
+        soundHep4.play()
+        
+        requestChilds[4].innerHTML= '';
+        requestChilds[4].classList.add('m-from-the-word-me-to-left')
+        requestChilds[5].innerHTML= '';
+        requestChilds[5].classList.add('e-from-the-word-me-to-left') 
+    })
+}
+
+// dismantle the tower
+async function dismantleTheTower(time){
+
+    await new Promise(resolve => setTimeout(resolve, time)).then(v => { 
+
+        // letter H
+        setTimeout(() => {soundHep2.play()}, 1000)
+        setTimeout(() => {soundHep2.play()}, 2400)
+        setTimeout(() => {soundHep2.play()}, 4000)
+
+        setTimeout(() => {
+            // requestChilds[0].style.left = '10rem'
+            requestChilds[0].innerHTML= ''
+            requestChilds[0].classList.add('dismantle-tower-hire-h')
+        }, 1000)
+
+        // letter I
+        setTimeout(() => {soundHep3.play()}, 5100)
+        setTimeout(() => {
+            // requestChilds[1].style.left = '6.5rem'
+            requestChilds[1].innerHTML= ''
+            requestChilds[1].classList.add('dismantle-tower-hire-i')
+        }, 5500)
+
+        setTimeout(() => {soundHep1.play()}, 8000)
+        setTimeout(() => {
+            requestChilds[2].innerHTML= ''
+            requestChilds[2].classList.add('dismantle-tower-hire-r')
+        }, 8000)
+    })
+}
+
+// jumping and cheering all
+async function jumpingAndCheeringAll(time){
+    await new Promise(resolve => setTimeout(resolve, time)).then(v =>  {
+    crowdCheer.play()
+
+    requestChilds[2].classList.add('request-dance-all')
+    requestChilds[5].classList.add('request-dance-all')
+
+    setTimeout(() => 
+        {
+            requestChilds[0].classList.add('request-dance-all')
+            requestChilds[4].classList.add('request-dance-all')
+        }, 200)
+    setTimeout(() => {
+            requestChilds[1].classList.add('request-dance-all')
+            requestChilds[3].classList.add('request-dance-all')
+        }, 300)
+    })
 }
 
 // Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=106455">Pixabay</a>

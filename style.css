@@ -10,6 +10,7 @@ body{
 :root {
 
     --color-font: aquamarine;
+    --color-text-shadow: #2ca9c9;
     --color-1: red;
     --color-2: orangered;
     --color-3: orange;
@@ -40,17 +41,17 @@ h1{
     width: 25rem;
     transform: translate(-50%, -50%);
     font-size: 4rem;
-    text-shadow: .3px -.3px .5px #2ca9c9,
-    .6px -.6px .5px #2ca9c9,
-    .9px -.9px .5px #2ca9c9,
-    1.2px -1.2px .5px #2ca9c9,
-    1.5px -1.5px .5px #2ca9c9,
-    1.8px -1.8px .5px #2ca9c9,
-    2.1px -2.1px .5px #2ca9c9,
-    2.4px -2.4px .5px #2ca9c9,
-    2.7px -2.7px .5px #2ca9c9,
-    3.0px -3.0px .5px #2ca9c9,
-    3.3px -3.3px .5px #2ca9c9
+    text-shadow: .3px -.3px .5px var(--color-text-shadow),
+    .6px -.6px .5px var(--color-text-shadow),
+    .9px -.9px .5px var(--color-text-shadow),
+    1.2px -1.2px .5px var(--color-text-shadow),
+    1.5px -1.5px .5px var(--color-text-shadow),
+    1.8px -1.8px .5px var(--color-text-shadow),
+    2.1px -2.1px .5px var(--color-text-shadow),
+    2.4px -2.4px .5px var(--color-text-shadow),
+    2.7px -2.7px .5px var(--color-text-shadow),
+    3.0px -3.0px .5px var(--color-text-shadow),
+    3.3px -3.3px .5px var(--color-text-shadow)
   
 }
 
@@ -236,9 +237,7 @@ h1 span{
 /* ****** font me animation jumping ***************************************************************************** */
 
 .request-dance{
-    /* for production */
-    /* animation: dance 4s ease-in-out forwards; */
-    /* for developement */
+
     animation: dance 2s ease-in-out forwards;
 }
 
@@ -248,57 +247,42 @@ h1 span{
         transform: translate(0%, 0%)
     }
     18%{
-        transform: translate(0%, -3rem)
+        transform: translate(0%, -2rem)
     } 
     27%{
         transform: translate(0%, 0%)
     } 
     36%{
-        transform: translate(0%, -3rem)
+        transform: translate(0%, -2rem)
     } 
     45%{
         transform: translate(0%, 0%)
     }
     54%{
-        transform: translate(0%, -3rem)
+        transform: translate(0%, -2rem)
     }
     63%{
         transform: translate(0%, 0%)
     }
     72%{
-        transform: translate(0%, -3rem)
+        transform: translate(0%, -2rem)
     } 
     81%{
         transform: translate(0%, 0%)
     } 
     90%{
-        transform: translate(0%, -3rem)
+        transform: translate(0%, -2rem)
     } 
     100%{
         transform: translate(0%, 0%)
     } 
 }
 
-
 /******* acrobatics ******************************************************************************/
 
 .acrobatics{
 
     transform-origin: -4.5rem center;
-}
-
-/* the word me */
-.the-word-me{
-
-    position: relative;
-    z-index: 9;
-    animation: jump-to-right-x 1.5s ease-in forwards;
-}
-
-.the-word-me::after{
-
-    content: 'ME';
-    animation: jump-to-right-y 1.5s ease-in forwards;
 }
 
 /* the word me jump to the right */
@@ -415,21 +399,18 @@ h1 span{
 @keyframes swing-arround-m-to-the-left {
 
     0%{
-
         transform:translateX(6.5rem);
     }
     50%{
-
-        /* transform:translateX(5rem) rotateX(-180deg)rotateY(-180deg); */
         transform:translateX(11.5rem) rotateX(-180deg)rotateY(-180deg);
     }
     100%{
-        /* transform: rotateX(360deg) rotateY(0deg); */
         transform: translateX(6.5rem) rotateX(360deg) rotateY(0deg);
     }
 }
 
 /******************* the word me jump back to origin / to the left **********************************/
+
 .m-from-the-word-me-to-left{
 
     position: relative;
@@ -563,7 +544,7 @@ h1 span{
         transform: translateX(6.5rem);
     }
     50%{
-        transform: translateX(1.5rem);
+        transform: translateX(.7rem);
     }
     100%{
         animation-timing-function: ease-out;
@@ -606,7 +587,7 @@ h1 span{
         transform: translateX(3.6rem);
     }
     50%{
-        transform: translateX(1.2rem);
+        transform: translateX(.7rem);
     }
     100%{
         animation-timing-function: ease-out;
@@ -630,9 +611,7 @@ h1 span{
 
 
 .request-dance-all{
-    /* for production */
-    /* animation: dance 4s ease-in-out forwards; */
-    /* for developement */
+
     animation: dance 4s ease-in-out forwards;
 }
 
