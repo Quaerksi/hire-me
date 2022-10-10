@@ -37,47 +37,49 @@ h1{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 19rem;
+    width: 25rem;
     transform: translate(-50%, -50%);
+    font-size: 4rem;
+    text-shadow: .3px -.3px .5px #2ca9c9,
+    .6px -.6px .5px #2ca9c9,
+    .9px -.9px .5px #2ca9c9,
+    1.2px -1.2px .5px #2ca9c9,
+    1.5px -1.5px .5px #2ca9c9,
+    1.8px -1.8px .5px #2ca9c9,
+    2.1px -2.1px .5px #2ca9c9,
+    2.4px -2.4px .5px #2ca9c9,
+    2.7px -2.7px .5px #2ca9c9,
+    3.0px -3.0px .5px #2ca9c9,
+    3.3px -3.3px .5px #2ca9c9
+  
+}
+
+.button{
+
+    margin: 1rem;
+}
+
+.z-index{
+
+    position: relative;
+    z-index: 1;
 }
 
 h1 span{
 
-    
     display: inline-block;
-    font-size: 3.5rem;
-    transform: scale(0)
+    transform: scale(0);
 }
 
-.request-dance{
-
-    /* animation: dance 5s ease-in-out; */
+.acrobatics{ 
+    display: inline-block;
 }
 
-@keyframes dance {
-    0%{
-        transform: translate(-50%, -50%)
-    }
-    20%{
-        transform: translate(-50%, -200%)
-    } 
-    40%{
-        transform: translate(-50%, 100%)
-    } 
-    60%{
-        transform: translate(-50%, -200%)
-    } 
-    80%{
-        transform: translate(-50%, 100%)
-    }
-    100%{
-        transform: translate(-50%, -50%)
-    }
-}
+/* ****** font animation pop up ***************************************************************************** */
 
 .start-animation-pop-up{
     
-    animation: pop-up 1s forwards;
+    animation: pop-up 2s ease-in forwards;
 }
 
 .start-animation-jump-and-spin{
@@ -87,8 +89,10 @@ h1 span{
 
 @keyframes pop-up {
 
-    100%{
-        
+    0%{
+        transform: scale(0);
+    }
+    100%{  
         transform: scale(1);
     }
 }
@@ -104,12 +108,532 @@ h1 span{
     100%{
         transform: rotate3d(0,1,0,360deg) translateY(0%);
     }
-    /* 75%{
-        transform: rotate3d(0,1,0,540deg) translateY(-200%);
+}
+
+/* ****** font animation tower build up***************************************************************************** */
+
+/* letter R */
+.tower-hire-r{
+
+    position: relative;
+    z-index: 3;
+    animation: jump-r-x 3s forwards;
+}
+
+.tower-hire-r::after{
+
+    content: 'R';
+    display: inline-block;
+    animation: jump-r-y 3s forwards;
+}
+
+@keyframes jump-r-x {
+
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateX(3.6rem);
+    }
+}
+
+@keyframes jump-r-y {
+
+    50%{
+        transform: translateY(-4rem);
     }
     100%{
-        transform: translateY(0%) rotate3d(0,1,0,740deg);
-    }   */
+        animation-timing-function: ease-out;
+        transform: translateY(-2.7rem);
+    }
+}
+
+/* letter I */
+.tower-hire-i{
+    position: relative;
+    z-index: 6;
+    animation: jump-i-x 3s forwards;
+}
+
+.tower-hire-i::after{
+
+    content: 'I';
+    display: inline-block;
+    animation: jump-i-y 3s forwards;
+}
+
+@keyframes jump-i-x {
+
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateX(6.5rem);
+    }
+}
+
+@keyframes jump-i-y {
+
+    50%{
+        transform: translateY(-7.7rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateY(-5.4rem);
+    }
+}
+
+/* letter H */
+.tower-hire-h{
+
+    position: relative;
+    z-index: 9;
+    animation: jump-h-x 5s forwards;
+}
+
+.tower-hire-h::after{
+
+    content: 'H';
+    display: inline-block;
+    animation: jump-h-y 5s forwards;
+}
+
+@keyframes jump-h-x {
+
+    40%{
+        animation-timing-function: ease-out;
+        transform: translateX(4rem);
+    }
+    70%{
+        transform: translateX(9rem);
+    }
+    100%{
+        transform: translateX(10rem);
+    }
+}
+
+@keyframes jump-h-y {
+
+    15%{
+        animation-timing-function: ease-out;
+        transform: translateY(-2.5rem); 
+    }
+    40%{
+        animation-timing-function: ease-out;
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-12rem);
+    }
+    70%{
+        animation-timing-function: ease-out;
+        transform: translateY(-8.6rem) rotate(20deg);
+    }
+    90%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-8.7rem) rotate(-40deg);
+    }
+}
+
+/* ****** font me animation jumping ***************************************************************************** */
+
+.request-dance{
+    /* for production */
+    /* animation: dance 4s ease-in-out forwards; */
+    /* for developement */
+    animation: dance 2s ease-in-out forwards;
+}
+
+@keyframes dance {
+   
+    9%{
+        transform: translate(0%, 0%)
+    }
+    18%{
+        transform: translate(0%, -3rem)
+    } 
+    27%{
+        transform: translate(0%, 0%)
+    } 
+    36%{
+        transform: translate(0%, -3rem)
+    } 
+    45%{
+        transform: translate(0%, 0%)
+    }
+    54%{
+        transform: translate(0%, -3rem)
+    }
+    63%{
+        transform: translate(0%, 0%)
+    }
+    72%{
+        transform: translate(0%, -3rem)
+    } 
+    81%{
+        transform: translate(0%, 0%)
+    } 
+    90%{
+        transform: translate(0%, -3rem)
+    } 
+    100%{
+        transform: translate(0%, 0%)
+    } 
+}
+
+
+/******* acrobatics ******************************************************************************/
+
+.acrobatics{
+
+    transform-origin: -4.5rem center;
+}
+
+/* the word me */
+.the-word-me{
+
+    position: relative;
+    z-index: 9;
+    animation: jump-to-right-x 1.5s ease-in forwards;
+}
+
+.the-word-me::after{
+
+    content: 'ME';
+    animation: jump-to-right-y 1.5s ease-in forwards;
+}
+
+/* the word me jump to the right */
+.m-from-the-word-me{
+
+    position: relative;
+    z-index: 9;
+    animation: jump-to-right-x 1.5s ease-in forwards;
+}
+
+.m-from-the-word-me::after{
+
+    content: 'M';
+    display: inline-block;
+    animation: jump-to-right-y 1.5s ease-in forwards;
+}
+
+.e-from-the-word-me{
+
+    position: relative;
+    z-index: 9;
+    animation: jump-to-right-x 1.5s ease-in forwards;
+}
+
+.e-from-the-word-me::after{
+
+    content: 'E';
+    display: inline-block;
+    animation: jump-to-right-y 1.5s ease-in forwards;
+}
+
+@keyframes jump-to-right-x {
+
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateX(6.5rem);
+    }
+}
+
+@keyframes jump-to-right-y {
+
+    50%{
+        transform: translateY(-6rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateY(0rem);
+    }
+}
+
+/************************** swing arround ***************************************/
+.swing-arround{
+    animation: swing-arround 4.4s forwards;
+}
+
+@keyframes swing-arround {
+
+    0%{
+        transform: rotateZ(-0deg);     
+    }
+
+    50%{
+        transform: rotateZ(-180deg);     
+    }
+
+    100%{
+        transform: rotateZ(-360deg);
+    }
+} 
+
+.contrary-swing-arround{
+
+    animation: contrary-swing-arround 4.4s forwards;
+}
+
+@keyframes contrary-swing-arround{
+
+    50%{
+
+        transform: rotateX(180deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+
+.swing-arround-e-to-the-left{
+
+    animation: swing-arround-e-to-the-left 4.4s forwards;
+}
+
+@keyframes swing-arround-e-to-the-left {
+
+    0%{
+        transform: translateX(6.5rem);
+    }
+    
+    50%{
+        transform: translateX(3rem) rotateX(180deg) rotateY(180deg);
+    }
+  
+    100%{
+
+        transform: rotateX(360deg) translateX(0rem) translateX(6.5rem);
+    }
+
+}
+
+.swing-arround-m-to-the-left{
+
+    animation: swing-arround-m-to-the-left 4.4s forwards;
+}
+
+@keyframes swing-arround-m-to-the-left {
+
+    0%{
+
+        transform:translateX(6.5rem);
+    }
+    50%{
+
+        /* transform:translateX(5rem) rotateX(-180deg)rotateY(-180deg); */
+        transform:translateX(11.5rem) rotateX(-180deg)rotateY(-180deg);
+    }
+    100%{
+        /* transform: rotateX(360deg) rotateY(0deg); */
+        transform: translateX(6.5rem) rotateX(360deg) rotateY(0deg);
+    }
+}
+
+/******************* the word me jump back to origin / to the left **********************************/
+.m-from-the-word-me-to-left{
+
+    position: relative;
+    z-index: 9;
+    animation: jump-to-left-x 1.5s ease-in forwards;
+}
+
+.m-from-the-word-me-to-left::after{
+
+    content: 'M';
+    display: inline-block;
+    animation: jump-to-left-y 1.5s ease-in forwards;
+}
+
+.e-from-the-word-me-to-left{
+
+    position: relative;
+    z-index: 9;
+    animation: jump-to-left-x 1.5s ease-in forwards;
+}
+
+.e-from-the-word-me-to-left::after{
+
+    content: 'E';
+    display: inline-block;
+    animation: jump-to-left-y 1.5s ease-in forwards;
+}
+
+@keyframes jump-to-left-x {
+
+    0%{
+        transform: translateX(6.5rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes jump-to-left-y {
+
+    50%{
+        transform: translateY(-6rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateY(0rem);
+    }
+}
+
+/* ****** font animation tower dismantle ***************************************************************************** */
+
+/* letter H */
+.dismantle-tower-hire-h{
+
+    position: relative;
+    z-index: 9;
+    animation: dismantle-jump-h-x 5s forwards;
+}
+
+.dismantle-tower-hire-h::after{
+
+    content: 'H';
+    display: inline-block;
+    animation: dismantle-jump-h-y 5s forwards;
+}
+
+@keyframes dismantle-jump-h-x {
+
+    0%{
+        transform: translateX(10rem);
+    }
+    30%{
+        transform: translateX(10rem);
+    }
+    60%{
+        transform: translateX(5rem);
+    }
+    
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes dismantle-jump-h-y {
+
+    0%{
+        transform: translateY(-8.7rem) rotate(40deg);
+    }
+    10%{
+        transform: translateY(-10rem) rotate(0deg);
+    }
+    30%{
+        transform: translateY(-8.6rem) rotate(-40deg);
+    }
+    50%{
+        animation-timing-function: ease-out;
+        transform: translateY(-10rem) rotate(-20deg)
+    }
+    60%{
+        transform: translateY(-0rem) ;
+    }
+    85%{
+        animation-timing-function: ease-out;
+        transform: translateY(-3rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateY(0rem); 
+    }
+}
+
+/* letter I */
+.dismantle-tower-hire-i{
+    position: relative;
+    z-index: 6;
+    animation: dismantle-jump-i-x 3s forwards;
+}
+
+.dismantle-tower-hire-i::after{
+
+    content: 'I';
+    display: inline-block;
+    animation: dismantle-jump-i-y 3s forwards;
+}
+
+@keyframes dismantle-jump-i-x {
+
+    0%{
+        transform: translateX(6.5rem);
+    }
+    50%{
+        transform: translateX(1.5rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes dismantle-jump-i-y {
+
+    0%{
+        transform: translateY(-5.4rem);
+    }
+    50%{
+        transform: translateY(-7.7rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateY(0rem);
+    }
+}
+
+/* letter R */
+.dismantle-tower-hire-r{
+
+    position: relative;
+    z-index: 3;
+    animation: dismantle-jump-r-x 3s forwards;
+}
+
+.dismantle-tower-hire-r::after{
+
+    content: 'R';
+    display: inline-block;
+    animation: dismantle-jump-r-y 3s forwards;
+}
+
+@keyframes dismantle-jump-r-x {
+
+    0%{
+        transform: translateX(3.6rem);
+    }
+    50%{
+        transform: translateX(1.2rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes dismantle-jump-r-y {
+
+    0%{
+        transform: translateY(-2.7rem);
+    }
+    50%{
+        transform: translateY(-4rem);
+    }
+    100%{
+        animation-timing-function: ease-out;
+        transform: translateY(0rem);
+    }
+}
+
+
+.request-dance-all{
+    /* for production */
+    /* animation: dance 4s ease-in-out forwards; */
+    /* for developement */
+    animation: dance 4s ease-in-out forwards;
 }
 
 /* ****** Carousel ***************************************************************************** */
