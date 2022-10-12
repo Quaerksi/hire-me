@@ -19,9 +19,10 @@ var soundHep4 = new Audio('music/hep-4.mp3')
 var soundBloop = new Audio('music/bloop.mp3')
 var soundBloop2 = new Audio('music/bloop.mp3')
 var soundWhoosh = new Audio('music/whoosh.mp3')
-var soundClapping = new Audio('music/clapping-2sek.mp3')
-var hulaHoop = new Audio('music/hula-hoops.mp3')
-var crowdCheer = new Audio('music/crowd-cheer.mp3')
+var soundWhoosh2 = new Audio('music/whoosh.mp3')
+var soundClapping = new Audio('music/clapping1.mp3')
+var hulaHoop = new Audio('music/hula-hoops1.mp3')
+var crowdCheer = new Audio('music/crowd-cheer1.mp3')
 
 // point in the middle
 // const center = document.createElement('div')
@@ -34,43 +35,38 @@ buttonAllowAudio.addEventListener('click', playAll)
 function playAll(){
 
     function startLetetrsMoving(){
+       
+        getOut()
+        
 
-        // font appears
-        lettersPopUp(1000)
-        // font jumps and rotate
-        lettersJumpAndSpin(7500)
-        // letters build tower
-        buildATower(15000)
-        // jumping and cheering word me
-        chumpingAndCheeringWordMe(26000) 
-        // move the word me to the right
-        jumpToRightWordMe(28500)
-        // circular around the tower
-        circularArroundTheTower(31500)
-        // move the word me to the left
-        jumpToLeftWordMe(36000)
-        // dismantle the tower
-        dismantleTheTower(37300)
-        // jumping and cheering all
-        jumpingAndCheeringAll(48000)
+        setTimeout(() =>{ 
+            // startMoving() 
+            // font appears
+            lettersPopUp()
+            // // font jumps and rotate
+            // lettersJumpAndSpin(10500) 
+            // // letters build tower
+            // buildATower(17500)
+            // // jumping and cheering word me
+            // chumpingAndCheeringWordMe(27800) 
+            // // move the word me to the right
+            // jumpToRightWordMe(30300)
+            // // circular around the tower
+            // circularArroundTheTower(33300)
+            // // move the word me to the left
+            // jumpToLeftWordMe(37800)
+            // // dismantle the tower
+            // dismantleTheTower(39100)
+            // // jumping and cheering all
+            // jumpingAndCheeringAll(49800)
+        }, 10000)
     }
+
+    startLetetrsMoving()
     
-    // startLetetrsMoving()
+}
 
-    /****** animate request ******/
-    request.classList.add('center')
-
-
-
-
-
-
-
-
-    
-    // tower insg später, i früher
-
-    /****** create triangles ******/
+    /****** create triangles for carousel and create functions ******/
 
     const NUMBER_OF_TRIANGLES = 18;
 
@@ -85,21 +81,31 @@ function playAll(){
         carousel.appendChild(window[element])  
     })
 
-    setTimeout(getOut, 00)
-
-    const sleep = ms => {
-        return new Promise(resolve => setTimeout(resolve, ms))
-    }
+    // setTimeout(getOut, 100)
 
     async function getOut() {
 
         for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
 
                     /******* for production *******/
-                    // await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out`))
+                    await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out`))
 
                     /******* for developement *******/
-                    window[`triangle${i}`].classList.add(`triangle${i}-out`)
+                    // window[`triangle${i}`].classList.add(`triangle${i}-out`)
+        }
+    }
+
+    async function startMoving() {
+
+        // window[`triangle1`].classList.add(`triangle1-out-move`)
+
+        for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
+
+                    /******* for production *******/
+                    await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out-move`))
+
+                    /******* for developement *******/
+                    // window[`triangle${i}`].classList.add(`triangle${i}-out`)
         }
     }
 
@@ -133,15 +139,16 @@ function playAll(){
         }
     }
 
-}
 
-async function lettersPopUp(time) {
+
+/* ************************* functions for letter move ***************************************** */
+async function lettersPopUp() {
 
     for(let i = 0; i < spanQuantity; i++){
 
-        await new Promise(resolve => setTimeout(resolve, time)).then(v => {
+        await new Promise(resolve => setTimeout(resolve, 1500)).then(v => {
             
-            i%2 === 0 ? setTimeout(() => {soundBloop.play()}, 1500) : setTimeout(() => {soundBloop2.play()}, 1500)
+            i%2 === 0 ? setTimeout(() => {soundBloop.play()}, 1100) : setTimeout(() => {soundBloop2.play()}, 1100)
             requestChilds[i].classList.add('start-animation-pop-up')
         }) 
 
@@ -158,7 +165,7 @@ async function lettersJumpAndSpin(time) {
         
         await new Promise(resolve => setTimeout(resolve, 1000)).then(v => {
 
-            soundWhoosh.play()
+            i%2 === 0 ? soundWhoosh.play(): soundWhoosh2.play()
             requestChilds[i].classList.add('start-animation-jump-and-spin')
         }) 
     }
@@ -172,15 +179,15 @@ async function buildATower(time) {
         setTimeout(() => {
             requestChilds[2].innerHTML= ''
             requestChilds[2].classList.add('tower-hire-r')
-        }, 100)
-        setTimeout(() => {soundHep3.play()}, 2700)
+        }, 200)
+        setTimeout(() => {soundHep3.play()}, 2500)
         setTimeout(() => {
             requestChilds[1].innerHTML= ''
             requestChilds[1].classList.add('tower-hire-i')
         }, 3000)
-        setTimeout(() => {soundHep2.play()}, 5800)
-        setTimeout(() => {soundHep2.play()}, 7700)
-        setTimeout(() => {soundHep2.play()}, 9500)
+        setTimeout(() => {soundHep2.play()}, 5600)
+        setTimeout(() => {soundHep2.play()}, 7400)
+        setTimeout(() => {soundHep2.play()}, 8900)
         setTimeout(() => {
             requestChilds[0].innerHTML= ''
             requestChilds[0].classList.add('tower-hire-h')}
@@ -194,9 +201,11 @@ async function chumpingAndCheeringWordMe(time) {
     await new Promise(resolve => setTimeout(resolve, time)).then(v =>  {
         soundClapping.play()
 
-        requestChilds[4].classList.add('request-dance')
-    
-        setTimeout(() => {requestChilds[5].classList.add('request-dance')}, 200)
+        
+        setTimeout(() => {
+            requestChilds[4].classList.add('request-dance')
+            setTimeout(() => {requestChilds[5].classList.add('request-dance')}, 200)
+        }, 00)
     })
 }
 
