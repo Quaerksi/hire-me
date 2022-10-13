@@ -14,6 +14,7 @@ const spanQuantity = requestChilds.length
 // sounds
 var soundHep1 = new Audio('music/hep-1.mp3')
 var soundHep2 = new Audio('music/hep-2-laut.mp3')
+var soundHep22 = new Audio('music/hep-2-laut.mp3')
 var soundHep3 = new Audio('music/hep-3.mp3')
 var soundHep4 = new Audio('music/hep-4.mp3')
 var soundBloop = new Audio('music/bloop.mp3')
@@ -37,29 +38,31 @@ function playAll(){
     function startLetetrsMoving(){
        
         getOut()
-        
 
         setTimeout(() =>{ 
-            // startMoving() 
+            startMoving() 
             // font appears
             lettersPopUp()
-            // // font jumps and rotate
-            // lettersJumpAndSpin(10500) 
-            // // letters build tower
-            // buildATower(17500)
-            // // jumping and cheering word me
-            // chumpingAndCheeringWordMe(27800) 
-            // // move the word me to the right
-            // jumpToRightWordMe(30300)
-            // // circular around the tower
-            // circularArroundTheTower(33300)
-            // // move the word me to the left
-            // jumpToLeftWordMe(37800)
-            // // dismantle the tower
-            // dismantleTheTower(39100)
-            // // jumping and cheering all
-            // jumpingAndCheeringAll(49800)
+            // font jumps and rotate
+            lettersJumpAndSpin(10500) 
+            // letters build tower
+            buildATower(17500)
+            // jumping and cheering word me
+            chumpingAndCheeringWordMe(27800) 
+            // move the word me to the right
+            jumpToRightWordMe(30300)
+            // circular around the tower
+            circularArroundTheTower(33300)
+            // move the word me to the left
+            jumpToLeftWordMe(37800)
+            // dismantle the tower
+            dismantleTheTower(39100)
+            // jumping and cheering all
+            jumpingAndCheeringAll(49800)
+            // carousel close
+            // getIn()
         }, 10000)
+
     }
 
     startLetetrsMoving()
@@ -81,17 +84,17 @@ function playAll(){
         carousel.appendChild(window[element])  
     })
 
-    // setTimeout(getOut, 100)
-
     async function getOut() {
+        
 
         for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
 
-                    /******* for production *******/
-                    await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out`))
+            console.log(`Hallo`)
+            /******* for production *******/
+            await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out`))
 
-                    /******* for developement *******/
-                    // window[`triangle${i}`].classList.add(`triangle${i}-out`)
+            /******* for developement *******/
+            // window[`triangle${i}`].classList.add(`triangle${i}-out`)
         }
     }
 
@@ -99,10 +102,14 @@ function playAll(){
 
         // window[`triangle1`].classList.add(`triangle1-out-move`)
 
-        for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
+        for(let i = 1; i <= (NUMBER_OF_TRIANGLES / 3); i++){
 
                     /******* for production *******/
-                    await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out-move`))
+                    await new Promise(resolve => setTimeout(resolve, 500)).then(v => {
+                        window[`triangle${i}`].classList.add(`triangle${i}-out-move`) //1 2 3 4 5 6 
+                        window[`triangle${i+6}`].classList.add(`triangle${i+6}-out-move`)// 7 8 9 10 11 12
+                        window[`triangle${i + 12}`].classList.add(`triangle${i + 12}-out-move`) //13 14 15 16 17 18
+                    })
 
                     /******* for developement *******/
                     // window[`triangle${i}`].classList.add(`triangle${i}-out`)
@@ -165,7 +172,7 @@ async function lettersJumpAndSpin(time) {
         
         await new Promise(resolve => setTimeout(resolve, 1000)).then(v => {
 
-            i%2 === 0 ? soundWhoosh.play(): soundWhoosh2.play()
+            i%2 === 0 ? setTimeout(() => {soundWhoosh.play()}, 1000): setTimeout(() => {soundWhoosh2.play()}, 1000)
             requestChilds[i].classList.add('start-animation-jump-and-spin')
         }) 
     }
@@ -258,9 +265,9 @@ async function dismantleTheTower(time){
     await new Promise(resolve => setTimeout(resolve, time)).then(v => { 
 
         // letter H
-        setTimeout(() => {soundHep2.play()}, 1000)
-        setTimeout(() => {soundHep2.play()}, 2400)
-        setTimeout(() => {soundHep2.play()}, 4000)
+        setTimeout(() => {soundHep2.play()}, 700)
+        setTimeout(() => {soundHep22.play()}, 1900)
+        setTimeout(() => {soundHep2.play()}, 3100)
 
         setTimeout(() => {
             // requestChilds[0].style.left = '10rem'
