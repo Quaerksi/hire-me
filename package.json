@@ -4,6 +4,8 @@
   "description": "Tired of hiring processes, I program it",
   "main": "index.html",
   "scripts": {
+    "start": "run index.html",
+    "run": "node ./index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

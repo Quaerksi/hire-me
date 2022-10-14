@@ -32,7 +32,7 @@ console.log(`Sound from https://pixabay.com/ and https://freesound.org/`)
 
 buttonAllowAnimation.addEventListener('click', playAll)
 
-// font appears
+// start animation
 function playAll(){
 
     buttonAllowAnimation.style.display = 'none';
@@ -46,6 +46,7 @@ function playAll(){
         setTimeout(()=> music.play() , 11700)
 
         setTimeout(() =>{ 
+            //carousel moves in and out
             startMoving() 
             // font appears
             lettersPopUp(7500)
@@ -70,83 +71,89 @@ function playAll(){
         setTimeout(() => {
             // carousel close
             getIn()
+            //start outro
             setTimeout(() => {
                 music.pause()
                 wellDone.play()
             }, 4500)
+            // pause outro
+            setTimeout(() => {
+                wellDone.pause()
+            }, 9300)
+            // refresh
             setTimeout(() => {
                 location.reload()
-            }, 9300)
+            }, 10500)
         }, 65000)
-
     }
 
-    startLetetrsMoving()
-    
+    startLetetrsMoving()  
 }
 
-    /****** create triangles for carousel and create functions ******/
+/****** create triangles for carousel and create functions ******/
 
-    const NUMBER_OF_TRIANGLES = 18;
+const NUMBER_OF_TRIANGLES = 18;
 
-    let allTriangles = [ 'triangle1', 'triangle2', 'triangle3', 'triangle4', 'triangle5', 'triangle6', 'triangle7', 
-        'triangle8', 'triangle9', 'triangle10', 'triangle11', 'triangle12', 'triangle13', 'triangle14', 'triangle15', 'triangle16', 'triangle17', 'triangle18']
+let allTriangles = [ 'triangle1', 'triangle2', 'triangle3', 'triangle4', 'triangle5', 'triangle6', 'triangle7', 
+    'triangle8', 'triangle9', 'triangle10', 'triangle11', 'triangle12', 'triangle13', 'triangle14', 'triangle15', 'triangle16', 'triangle17', 'triangle18']
 
-    allTriangles.forEach(element =>{
+allTriangles.forEach(element =>{
 
-        window[element] = document.createElement('div')
-        window[element].classList.add('triangle-basics')
-        window[element].classList.add(element)  
-        carousel.appendChild(window[element])  
-    })
+    window[element] = document.createElement('div')
+    window[element].classList.add('triangle-basics')
+    window[element].classList.add(element)  
+    carousel.appendChild(window[element])  
+})
 
-    async function getOut() {
-        
+async function getOut() {
+    
 
-        for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
+    for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
 
-            /******* for production *******/
-            await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out`))
+        /******* for production *******/
+        await new Promise(resolve => setTimeout(resolve, 500)).then(v => window[`triangle${i}`].classList.add(`triangle${i}-out`))
 
-        }
     }
+}
 
-    async function startMoving() {
+async function startMoving() {
 
-        for(let i = 1; i <= (NUMBER_OF_TRIANGLES / 3); i++){
+    for(let i = 1; i <= (NUMBER_OF_TRIANGLES / 3); i++){
 
-                    /******* for production *******/
-                    await new Promise(resolve => setTimeout(resolve, 500)).then(v => {
-                        window[`triangle${i}`].classList.add(`triangle${i}-out-move`) //1 2 3 4 5 6 
-                        window[`triangle${i+6}`].classList.add(`triangle${i+6}-out-move`)// 7 8 9 10 11 12
-                        window[`triangle${i + 12}`].classList.add(`triangle${i + 12}-out-move`) //13 14 15 16 17 18
-                    })
-        }
+        /******* for production *******/
+        await new Promise(resolve => setTimeout(resolve, 500)).then(v => {
+            window[`triangle${i}`].classList.add(`triangle${i}-out-move`) //1 2 3 4 5 6 
+            window[`triangle${i+6}`].classList.add(`triangle${i+6}-out-move`)// 7 8 9 10 11 12
+            window[`triangle${i + 12}`].classList.add(`triangle${i + 12}-out-move`) //13 14 15 16 17 18
+        })
     }
+}
 
-    async function getIn() {
+async function getIn() {
 
-        for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
+    for(let i = 1; i <= NUMBER_OF_TRIANGLES; i++){
 
-            // get computed style
-            window[`triangle${i}`].style.top = getComputedStyle(window[`triangle${i}`]).top;
-            window[`triangle${i}`].style.left = getComputedStyle(window[`triangle${i}`]).left
+        // get computed style
+        window[`triangle${i}`].style.top = getComputedStyle(window[`triangle${i}`]).top;
+        window[`triangle${i}`].style.left = getComputedStyle(window[`triangle${i}`]).left
 
-            /******* for production *******/
-            await new Promise(resolve => setTimeout(resolve, 200)).then(v => {
+        /******* for production *******/
+        await new Promise(resolve => setTimeout(resolve, 200)).then(v => {
 
-                // remove classes
-                window[`triangle${i}`].classList.remove(`triangle${i}-out`)
-                window[`triangle${i}`].classList.remove(`triangle${i}-out-move`)
-                // add classes
-                window[`triangle${i}`].classList.add('triangle-in')
-            })
-        }
+            // remove classes
+            window[`triangle${i}`].classList.remove(`triangle${i}-out`)
+            window[`triangle${i}`].classList.remove(`triangle${i}-out-move`)
+            // add classes
+            window[`triangle${i}`].classList.add('triangle-in')
+        })
     }
+}
 
 
 
 /* ************************* functions for letter move ***************************************** */
+
+// letter pop in
 async function lettersPopUp() {
 
     for(let i = 0; i < spanQuantity; i++){
