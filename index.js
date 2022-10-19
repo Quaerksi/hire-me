@@ -40,7 +40,7 @@ function playAll(){
     getOut()
 
     function startLetetrsMoving(){
-       
+
         getOut()
         intro.play();
         setTimeout(()=> music.play() , 11700)
@@ -148,8 +148,6 @@ async function getIn() {
         })
     }
 }
-
-
 
 /* ************************* functions for letter move ***************************************** */
 
